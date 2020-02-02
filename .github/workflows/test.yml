@@ -14,8 +14,9 @@ jobs:
         source_file: version.txt
         extraction_regex: "(\\d+\\.\\d+\\.\\d+)"
     - name: First step
-      if: steps.create-tag.outputs.tagname
-      run: echo First step
+      if: steps.create-tag.outputs.tagname != null
+      run: |
+        echo tag: "${{ steps.create-tag.outputs.tagname }}"
     - name: Second step
       run: echo Second step
 

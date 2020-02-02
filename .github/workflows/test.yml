@@ -1,5 +1,7 @@
 name: Dummy workflow
 
+on: push
+
 jobs:
   foo:
     runs-on: ubuntu-latest
